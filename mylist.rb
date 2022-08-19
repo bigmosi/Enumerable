@@ -7,7 +7,9 @@ class MyList
   end
 
   def each(&value)
-    @list.each(&value)
+    return 'No block given' unless block_given?
+
+    @list.filter(&value)
   end
 end
 
